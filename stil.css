@@ -1,0 +1,111 @@
+/* Generell styling for siden */
+body {
+    font-family: sans-serif;
+    background-color: #f5fd00;
+    text-align: center; /* Midtstiller tekst */
+    padding: 20px;
+}
+
+h1 {
+    color: #000000;
+}
+
+/* Containeren som holder bildene */
+.snurre-container {
+    display: flex;          /* Legger bildene ved siden av hverandre */
+    justify-content: center; /* Midtstiller bildene på linjen */
+    gap: 30px;              /* Mellomrom mellom bildene */
+    margin: 40px 0;         /* Mellomrom over og under containeren */
+}
+
+/* Styling for selve bildene */
+.snurre-bilde {
+    width: 150px;           /* Setter en fast bredde på bildene */
+    height: 150px;          /* Setter en fast høyde for å gjøre dem firkantede */
+    border-radius: 50%;    /* Gjør bildene runde */
+    object-fit: cover;      /* Sørger for at bildet fyller sirkelen fint */
+    border: 5px solid rgb(17, 255, 0); /* Hvit ramme */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Litt skygge */
+
+    /* --- HER ER ANIMASJONEN --- */
+    animation-name: roter;         /* Hvilken animasjon skal brukes? (Se under) */
+    animation-duration: 5s;        /* Hvor lang tid tar én snurr? (5 sekunder) */
+    animation-iteration-count: infinite; /* Hvor mange ganger? (For alltid) */
+    animation-timing-function: linear;  /* Jevn fart hele tiden */
+}
+
+/* Definisjon av animasjonen 'roter' */
+@keyframes roter {
+    from {
+        transform: rotate(0deg); /* Startposisjon: 0 grader */
+    }
+    to {
+        transform: rotate(360deg); /* Sluttposisjon: 360 grader (full sirkel) */
+    }
+}
+
+/* Styling for videoen */
+.video-boks {
+    margin-top: 40px;
+}
+
+
+.video-boks iframe {
+    border: 6px solid #48ff00;     /* Frisk rød/rosa ramme */
+    border-radius: 15px;           /* Runde hjørner */
+    box-shadow: 0 0 20px #48ff00;  /* Gjør at rammen "lyser" i mørket */
+}
+
+/* Styling for YouTube-videoen og superrask spinning */
+.video-boks iframe {
+    border: 5px solid #ff4757;             /* Ramme rundt videoen */
+    border-radius: 12px;                   /* Runde hjørner */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+
+    /* --- ANIMASJON: SUPERRASK SPINNING --- */
+    animation-name: roter;                 /* Bruker 'roter'-animasjonen du allerede har */
+    animation-duration: 0.5s;              /* EN HALV SEKUND per runde! (Gjør denne f.eks. 0.2s for enda sprøere fart) */
+    animation-iteration-count: infinite;   /* Snurrer uendelig */
+    animation-timing-function: linear;      /* Jevn fart hele tiden */
+}
+
+/* Sidestolper på venstre og høyre side */
+/* Sidestolper på venstre og høyre side */
+.sidestolpe {
+    position: fixed;     /* Låser fast til skjermen */
+    top: 0;
+    bottom: 0;           
+    height: 100%;        /* <-- DENNE MANGLET! Sier at bildet skal fylle hele høyden */
+    width: 120px;        /* Hvor bred stolpen skal være */
+    object-fit: fill;    /* Strekker bildet helt ut fra topp til bunn */
+    z-index: 10;         /* Sørger for at den ligger oppå bakgrunnen */
+}
+
+/* Plassering */
+.venstre {
+    left: 0;
+}
+
+.hoyre {
+    right: 0;
+}
+
+/* Sørger for at innholdet i midten ikke krasjer med stolpene */
+main {
+    margin-left: 140px;
+    margin-right: 140px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styling for den arabiske teksten */
+.arabisk-tekst {
+    color: #ffcc00;                 /* En skarp, gyllen gul farge */
+    font-size: 1.4rem;              /* Gjør den litt større */
+    font-weight: bold;              /* Fet skrift */
+    background-color: #222;         /* En mørk boks-bakgrunn bak teksten */
+    padding: 10px 15px;             /* Litt luft rundt teksten */
+    border-radius: 8px;             /* Runde hjørner på boksen */
+    display: inline-block;          /* Gjør at boksen tilpasser seg tekstlengden */
+    box-shadow: 0 0 15px #ffcc00;   /* En glødende "neon-effekt" rundt teksten! */
+}
