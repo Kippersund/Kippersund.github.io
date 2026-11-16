@@ -13,7 +13,7 @@ body {
     flex-direction: column;
 }
 
-/* Liten toppbar */
+/* Toppbar */
 .toppbar {
     display: flex;
     justify-content: space-between;
@@ -82,7 +82,7 @@ body {
     gap: 20px;
 }
 
-/* Rene prosjektbokser */
+/* Prosjektbokser */
 .prosjektboks {
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -108,7 +108,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Minimalistiske knapper */
+/* Knapper */
 .knapp {
     display: inline-block;
     background: rgba(255, 255, 255, 0.1);
